@@ -1,0 +1,20 @@
+name: Hello and Goodbye Workflow
+
+on:
+  push:
+    branches:
+      - main           # Workflow kører kun når du pusher til main
+  workflow_dispatch:   # Kan også køres manuelt fra Actions-tabben
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest # GitHub starter en virtuel Linux-maskine
+    steps:
+      - name: Say Hello
+        run: echo "Hello world"
+
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Goodbye
+        run: echo "Goodbye"
